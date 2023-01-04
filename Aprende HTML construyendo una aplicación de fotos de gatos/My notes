@@ -1,0 +1,294 @@
+# FreeCodeCamp Diseño web responsivo legado
+# Aprende HTML construyendo una aplicación de fotos de gatos
+
+## Elementos HTML
+
+La mayoría de elementos HTML tienen una etiqueta de apertura y una etiqueta de cierre.
+
+Las etiquetas de apertura se ven así:
+
+`<h1>`
+Las etiquetas de cierre se ven así:
+
+`</h1>`
+
+La única diferencia entre las etiquetas de apertura y cierre es la barra frontal después del corchete de ángulo abierto.
+
+Para imprimir un titulo:
+
+`<h1>Hello World</h1>`
+
+Los elementos h1 se utilizan a menudo para títulos principales, mientras que los elementos h2 se utilizan generalmente para subtítulos. También hay elementos h3, h4, h5 y h6 para indicar diferentes niveles de subtítulos.
+
+`<h2>CatPhotoApp</h2>`
+
+Tambien existen elementos p
+
+`<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>`
+
+Comentar es también una forma conveniente de desactivar código sin tener que borrarlo por completo.
+
+Los comentarios en HTML comienzan con `<!--` y terminan con `-->`
+
+```html
+<!--
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+-->
+```
+
+## Elementos HTML5
+
+HTML5 introduce etiquetas HTML más descriptivas. Estas incluyen main, header, footer, nav, video, article, section, entre otras.
+
+Estas etiquetas dan una estructura descriptiva a tu HTML, hacen que tu HTML sea más fácil de leer, ayudan con la Optimización de Motores de Búsqueda (SEO) y mejoran la accesibilidad. La etiqueta HTML5 main ayuda a los motores de búsqueda y otros desarrolladores a encontrar el contenido principal de tu página.
+
+Por ejemplo, un elemento main con dos elementos hijos anidados en su interior:
+
+```html
+<main> 
+  <h1>Hello World</h1>
+  <p>Hello Paragraph</p>
+</main>
+```
+
+### Imagenes en sitio web
+
+Puedes agregar imágenes a tu sitio web utilizando el elemento img, y apuntar a la URL de una imagen específica usando el atributo src.
+
+Un ejemplo de esto sería:
+
+
+`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+
+
+
+Ten en cuenta que los elementos img se cierran automáticamente.
+
+Todos los elementos img deben tener un atributo alt. El texto dentro de un atributo alt es utilizado por los lectores de pantalla para mejorar la accesibilidad y se muestra si la imagen falla en cargar.
+
+Note: Si la imagen es puramente decorativa, usar un atributo alt vacío es una buena práctica.
+
+Idealmente, el atributo alt no debe contener caracteres especiales a menos que sea necesario.
+
+### Enlaces con elementos anchor
+
+Puedes usar los elementos a (anchor) para enlazar a contenido fuera de tu página web.
+
+Los elementos a requieren un atributo href con la dirección web de destino. También necesitan un texto anchor. Por ejemplo:
+
+
+`<a href="https://www.freecodecamp.org">this links to freecodecamp.org</a>`
+
+
+Los elementos a (anchor) también pueden utilizarse para crear enlaces internos para saltar a diferentes secciones dentro de una página web.
+
+Para crear un enlace interno, asignas el atributo href de un enlace con un símbolo hash # más el valor del atributo id para el elemento al que deseas enlazar internamente, normalmente más abajo de la página. Luego necesitas agregar el mismo atributo id al elemento que estás enlazando. Un id es un atributo que describe un elemento de forma única.
+
+
+```html
+<a href="#contacts-header">Contacts</a>
+...
+<h2 id="contacts-header">Contacts</h2>
+```
+
+Otro ejemplo mas claro
+
+```html
+<a href="#footer">jump to Bottom</a>
+<footer id="footer">Copyright Cat Photo App</footer>
+```
+
+### Anida un elemento anchor dentro de un párrafo
+
+Puedes anidar enlaces dentro de otros elementos de texto.
+
+Puedes anidar enlaces dentro de otros elementos de texto.
+
+```html
+<p>
+  Here's a <a target="_blank" href="https://www.freecodecamp.org"> link to www.freecodecamp.org</a> for you to follow.
+</p>
+```
+
+Desglosemos el ejemplo. 
+- El texto normal está envuelto en el elemento p: `<p> Here's a ... for you to follow. </p>`
+- A continuación está el elemento anchor `<a>` (que requiere una etiqueta de cierre `</a>`): `<a> ... </a>`
+- target es un atributo de etiqueta anchor que especifica dónde abrir el enlace. El valor _blank especifica abrir el enlace en una nueva pestaña. El href es un atributo de etiqueta anchor que contiene la dirección URL del enlace: `<a href="https://www.freecodecamp.org" target="_blank"> ... </a>`
+- El texto, link to www.freecodecamp.org, dentro de un elemento a se llama **texto de anclaje**, y mostrará el enlace para hacer clic: `<a href=" ... " target="...">link to freecodecamp.org</a>`
+
+### Elemento figure 
+
+El elemento figure representa contenido independiente y te permitirá asociar una imagen a una descripción.
+
+```html
+<figure>
+    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+</figure>
+```
+
+Un elemento (figcaption), se utiliza para añadir una descripción o leyenda para describir una imagen anidada en un elemento figure. Por ejemplo, `<figcaption>`A cute cat`</figcaption>` añade la leyenda A cute cat.
+
+```html
+<figure>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+  <figcaption>Cats love lasagna</figcaption>
+</figure>
+```
+
+### Etiqueta form
+
+El elemento HTML form (`<form>`) representa una sección de un documento que contiene controles interactivos que permiten a un usuario enviar información a un servidor web.
+
+Atributo action: La URI de un programa que procesa la información enviada por medio del formulario. Este valor puede ser sobreescrito por un atributo formaction en un `<button>` o en el elemento`<input>`.
+
+```html
+<form action="https://freecatphotoapp.com/submit-cat-photo">
+</form>
+```
+
+El elemento input te permite recolectar datos desde un formulario web de diferentes formas. Al igual que los elementos img, los elementos input son de auto-cierre y no necesitan etiquetas de cierre.
+
+Hay diferentes tipos de elementos input, los cuales los puedes crear con el atributo type. Puedes crear fácilmente un campo de contraseña (password), un botón de reinicio (reset) o un control para permitir a los usuarios seleccionar un archivo desde su computadora.
+
+Para que los datos de un formulario puedan acceder al destino especificado en el atributo action, debes darle al campo de texto un atributo name y darle un valor que represente a los datos que están siendo enviados. Por ejemplo, puede utilizar la siguiente sintaxis para un campo de texto de dirección de correo electrónico: `<input type="text" name="email">`.
+
+Un texto provisional (placeholder) nos da una idea de que tipo de información debemos escribir en un elemento input. Por ejemplo, `<input type="text" placeholder="Email address">`.
+
+`<input type="text" name="catphotourl" placeholder="cat photo URL">`
+
+Para evitar que un usuario entregue su formulario incompleto, necesitas añadir el atributo required al elemento input. El atributo required no necesita ningún valor. Simplemente necesitas añadir la palabra required al elemento input, asegurándote de que hay espacios entre ella y los otros atributos.
+
+`<input type="text" name="catphotourl" placeholder="cat photo URL" required>`
+
+Utiliza el elemento button para crear un botón cliqueable. Por ejemplo, `<button>Click Here</button>` crea un botón con el texto Click Here.
+
+Añade un elemento button con el texto Submit debajo del elemento input. El comportamiento predeterminado de un botón sin atributos en un formulario es enviar la información a la ubicación especificada en el atributo action del formulario.
+
+El botón que has agregado enviará el formulario por defecto. Sin embargo, confiar en el comportamiento por defecto puede causar confusión. Agrega un atributo type con el valor submit al button para dejar claro que es un botón de envío.
+
+```html
+<form>
+    <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+</form>
+```
+
+#### Radios
+
+Puedes usar botones de radio (radio button) para preguntas en las que quieres que el usuario solo te dé una respuesta a partir de múltiples opciones.
+
+`<input type="radio"> Indoor`
+
+Puedes observar que si creas dos elementos radio button pueden ser seleccionados al mismo tiempo. Para hacer que al seleccionar un radio button, el otro sé deseleccione automáticamente, ambos botones deben tener un atributo name con el mismo valor.
+
+```html
+<label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+```
+
+#### Atributo id
+
+El atributo id se utiliza para identificar elementos HTML específicos. Cada atributo id debe tener un valor único, diferente a los demás valores id de la página.
+
+`<input type="radio" id="indoor"> Indoor`
+
+#### Atributo value
+
+Si seleccionas el radio button Indoor y envías el formulario, los datos del radio button se basarán en sus atributos name y value. Ya que tus elementos radio button no tienen el atributo value, los datos del formulario se verán así indoor-outdoor=on, lo cual no es útil cuando tienes múltiples radio button.
+
+Añade un atributo value a ambos radio button. Por conveniencia, a los atributos value dales el mismo valor del atributo id de cada radio button.
+
+```html
+<label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+<label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+```
+
+#### elemento fieldset
+
+El elemento fieldset se utiliza para agrupar elementos input y label relacionados dentro de un formulario web. Los elementos fieldset son elementos de nivel de bloque, lo que significa que aparecen en una nueva línea.
+
+#### Elemento legend
+
+El elemento legend actúa como una leyenda/descripción, para el contenido del elemento fieldset. Le da a los usuarios un contexto sobre lo que deben ingresar en esa parte del formulario.
+
+`<legend>Is your cat an indoor or outdoor cat?</legend>`
+
+Añade un elemento legend con el texto Is your cat an indoor or outdoor cat? sobre ambos botones de radio (radio button).
+
+```html
+  <fieldset>
+    <legend>Is your cat an indoor or outdoor cat?</legend>
+    <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+  </fieldset>
+```
+
+#### Checkbox
+
+Los formularios Usualmente usan casillas de verificación (checkboxes-checkbox) para preguntas que puedan tener más de una respuesta. Por ejemplo, aquí hay un checkbox (casilla de verificación) con la opción tacos: `<input type="checkbox">` tacos.
+
+`<input id="loving" type="checkbox"> Loving`
+
+Hay otra manera de asociar un texto con el elemento input. Puedes anidar un texto dentro de un elemento label y añadirle un atributo for con el mismo valor del atributo id del elemento input.
+
+```html
+<input id="loving" type="checkbox">
+<label for="loving">Loving</label>
+```
+
+Al igual que los radio button, los datos de formulario de un checkbox se basan en los atributos name / value. Mientras que el atributo value es opcional, es una buena práctica incluirlo en cualquier checkbox o radio button de una página
+
+```html
+<input id="loving" type="checkbox" name="personality" value="loving"> <label for="loving">Loving</label>
+<input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+<input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic"> Energetic</label>
+</fieldset>
+```
+
+Para hacer que un checkbox o un radio button este seleccionado por defecto, necesitas añadir el atributo checked. No hay necesidad de agregarle un valor al atributo checked. Simplemente necesitas añadir la palabra checked al elemento input, asegurándote de que hay espacios entre ella y los otros atributos.
+
+```
+<input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+
+<label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+```
+
+## Elemento head
+
+Puedes notar que todo lo que has añadido hasta ahora, está dentro del elemento body. Todos los elementos que deben ser renderizados o mostrados en la página, deben ir dentro del elemento body. Sin embargo, otro tipo información que también es importante va dentro del elemento head.
+
+El elemento title (título) determina lo que los navegadores muestran en la barra de título o en las pestañas del navegador
+
+```html
+<head>
+    <title>CatPhotoApp</title>
+</head>
+```
+
+## Elemento html
+
+Puedes ver que todo el contenido de la página está anidado dentro de un elemento html. Podemos deducir que todos los elementos son descendientes de este elemento html
+
+Añade un atributo lang con el valor en a la etiqueta de apertura del elemento html para especificar que el lenguaje de la página es el inglés.
+
+Todas las páginas deben comenzar con <!DOCTYPE html>. Esta cadena especial es conocida como una declaración y se asegura de que el navegador intente cumplir las especificaciones de la industria.
+
+```html
+<html lang="en">
+</html>    
+```
+
+Puede configurar el comportamiento del navegador agregando elementos meta de cierre automático en el head. Aquí hay un ejemplo:
+
+```html
+  <head>
+    <meta charset="UTF-8" >
+    <title>CatPhotoApp</title>
+  </head>
+```
+
+Indique al navegador que analice el marcado en varios idiomas creando un elemento meta como hijo del elemento head. Establece su atributo charset en UTF-8.
